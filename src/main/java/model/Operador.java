@@ -46,5 +46,21 @@ public class Operador extends Funcionario {
 	public Date getUltimaVenda() {
 		return ultimaVenda;
 	}
+	
+	public void registrarVenda() {
+	    // lógica para registrar uma nova venda
+	}
+
+	public void abrirCaixa() {
+	    // lógica para iniciar o turno
+	}
+
+	public void fecharCaixa() {
+	    // lógica para fechar o caixa, calcular total, etc.
+	}
+
+	public void emitirComprovanteDeVenda() {
+	    // lógica de geração de nota (ou recibo)
+	}
 
 }

@@ -126,6 +126,19 @@ public abstract class Funcionario {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
+	
+	public void ativar() {
+	    this.ativo = true;
+	}
 
+	public void desativar() {
+	    this.ativo = false;
+	}
+	
+	public void autenticado(int id, String senha) {
+		if() {
+			
+		}
+	}
 
 }

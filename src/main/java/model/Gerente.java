@@ -9,4 +9,7 @@ public class Gerente extends Funcionario {
 		super(nome, cpf, dataNascimento, telefone, email, endereco, dataAdmissao, cargo, salario, senha, ativo);
 	}
 
+	public void gerarRelatorioVendas(Date dia) {
+	    
+	}
 }
