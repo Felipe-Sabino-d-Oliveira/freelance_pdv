@@ -135,10 +135,8 @@ public abstract class Funcionario {
 	    this.ativo = false;
 	}
 	
-	public void autenticado(int id, String senha) {
-		if() {
-			
-		}
+	public String exibirInformacoes() {
+	    return "ID: " + id + ", Nome: " + nome + ", Cargo: " + cargo;
 	}
 
 }
