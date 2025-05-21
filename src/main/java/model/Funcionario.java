@@ -135,8 +135,4 @@ public abstract class Funcionario {
 	    this.ativo = false;
 	}
 	
-	public String exibirInformacoes() {
-	    return "ID: " + id + ", Nome: " + nome + ", Cargo: " + cargo;
-	}
-
 }

@@ -1,6 +1,6 @@
 package controller;
 
-public class Produto {
+public class ProdutoController {
 	
 	// Atributos produtos
 	private int id;
@@ -10,7 +10,7 @@ public class Produto {
 	private int quatidade;
 	
 	// Construtor
-	public Produto(int id,String codigo, String nome, double preco, int quantidade) {
+	public ProdutoController(int id,String codigo, String nome, double preco, int quantidade) {
 		this.id = id;
 		this.codigo  = codigo;
 		this.nome = nome;
