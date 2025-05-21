@@ -31,6 +31,8 @@ public class Main extends Application {
         } else {
             System.out.println("❌ Falha ao conectar.");
         }
+        
+        System.out.println("O Mercado abriu!!!");
 
     }
 }
