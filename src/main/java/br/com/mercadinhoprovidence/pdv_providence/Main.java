@@ -1,5 +1,8 @@
 package br.com.mercadinhoprovidence.pdv_providence;
 
+import java.sql.Connection;
+
+import config.ConexaoMySQL;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -19,6 +22,15 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        // launch(args);
+
+        Connection conn = ConexaoMySQL.getConnection();
+
+        if (conn != null) {
+            System.out.println("🔌 Conexão bem-sucedida!");
+        } else {
+            System.out.println("❌ Falha ao conectar.");
+        }
+
     }
 }
