@@ -1,9 +1,19 @@
 package controller;
 
-public class GerenteController {
+import dao.GerenteDao;
+import model.Gerente;
 
-	public GerenteController() {
-		// TODO Auto-generated constructor stub
-	}
+public class GerenteController extends FuncionarioController {
 
+    private GerenteDao gerenteDao;
+
+    public GerenteController() {
+        this.gerenteDao = new GerenteDao();
+    }
+
+    public void cadastrarGerente(Gerente gerente) {
+        gerenteDao.inserir(gerente);
+    }
+
+    // Pode adicionar métodos específicos no futuro
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Date;
+
 public class Produto {
 
 	private int id;
@@ -11,12 +13,13 @@ public class Produto {
 	private double precoVenda;
 	private double precoCusto;
 	private int quantidadeEstoque;
+	private Date validade;
 	private boolean ativo;
 
 	
 
 	public Produto(String nome, String codigoBarras, String descricao, String unidade, double precoVenda,
-			double precoCusto, int quantidadeEstoque, boolean ativo) {
+			double precoCusto, int quantidadeEstoque, Date validade, boolean ativo) {
 		this.id = proximoId++;
 		this.nome = nome;
 		this.codigoBarras = codigoBarras;
@@ -25,6 +28,7 @@ public class Produto {
 		this.precoVenda = precoVenda;
 		this.precoCusto = precoCusto;
 		this.quantidadeEstoque = quantidadeEstoque;
+		this.validade = validade;
 		this.ativo = ativo;
 	}
 
@@ -86,6 +90,14 @@ public class Produto {
 
 	public void setQuantidadeEstoque(int quantidadeEstoque) {
 		this.quantidadeEstoque = quantidadeEstoque;
+	}
+	
+	public Date getValidade() {
+		return validade;
+	}
+	
+	public void setValidade(Date validade) {
+		this.validade = validade;
 	}
 
 	public boolean isAtivo() {

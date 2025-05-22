@@ -38,6 +38,7 @@ CREATE TABLE produtos (
     precoVenda        DECIMAL(10,2) NOT NULL,
     precoCusto        DECIMAL(10,2) NOT NULL,
     quantidadeEstoque INT           NOT NULL,
+    validade		  DATE			NOT NULL,
     ativo             BOOL          NOT NULL
 );
 
@@ -61,15 +62,35 @@ CREATE TABLE pedidos (
 );
 
 CREATE TABLE itens_pedido (
-    id         INT PRIMARY KEY,
-    pedidoId   INT NOT NULL,
-    produtoId  INT NOT NULL,
-    quantidade INT NOT NULL,
+    id         	  INT PRIMARY KEY,
+    pedidoId   	  INT NOT NULL,
+    produtoId  	  INT NOT NULL,
+    quantidade	  INT NOT NULL,
     precoUnitario DECIMAL(10,2) NOT NULL,
-    subtotal   DECIMAL(10,2) NOT NULL,
+    subtotal   	  DECIMAL(10,2) NOT NULL,
 
     FOREIGN KEY (pedidoId) REFERENCES pedidos(id),
     FOREIGN KEY (produtoId) REFERENCES produtos(id)
+);
+
+CREATE TABLE estoque (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    localizacao VARCHAR(100) NOT NULL,
+    dataAtualizacao DATE NOT NULL
+);
+
+CREATE TABLE estoques (
+    id INT PRIMARY KEY,
+    localizacao VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE estoque_produto (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    estoque_id INT NOT NULL,
+    produto_id INT NOT NULL,
+    quantidade INT NOT NULL,
+    FOREIGN KEY (estoque_id) REFERENCES estoque(id),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
 );
 
 INSERT INTO funcionarios 
@@ -77,8 +98,8 @@ INSERT INTO funcionarios
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 INSERT INTO produtos 
-(id, nome, codigoBarras, descricao, unidade, precoVenda, precoCusto, quantidadeEstoque, ativo)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+(id, nome, codigoBarras, descricao, unidade, precoVenda, precoCusto, quantidadeEstoque, validade, ativo)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 INSERT INTO pagamentos 
 (id, forma, valorPago, troco)

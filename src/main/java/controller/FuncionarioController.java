@@ -1,29 +1,23 @@
 package controller;
 
-public class FuncionarioController {
+import dao.FuncionarioDao;
+import model.Funcionario;
 
-	// Entrar no pdv
-	// finalizar venda
-	// Add produto
-	// retirar produto?
-	
-	// Logar
-	public void login() {/* bool */}
-	
-	public void deslogar() { /* void */ }
-	
-	// Vendas
-	public void iniciarVenda() { /* void */ }
-	
-	public void removerProduto() {/* string produto_id : void  */}
-	
-	public void atualizarQuantidadeProduto() {/* void */}
-	
-	public void totalCompra() {/* double */}
-	
-	public void finalizarVenda() {/* void  */}
-	
-	public void cancelarVenda() {/* void */ }
-	
-	
+public abstract class FuncionarioController {
+    
+    protected FuncionarioDao funcionarioDao;
+
+    public FuncionarioController() {
+        funcionarioDao = new FuncionarioDao();
+    }
+
+    public void cadastrarFuncionario(Funcionario funcionario) {
+        funcionarioDao.inserir(funcionario);
+    }
+
+    public void excluirFuncionario(int id) {
+        funcionarioDao.deletar(id);
+    }
+
+    // Atualizar, listar, ativar/desativar etc.
 }

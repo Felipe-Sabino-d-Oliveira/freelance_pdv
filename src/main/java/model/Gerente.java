@@ -8,8 +8,4 @@ public class Gerente extends Funcionario {
 			Date dataAdmissao, String cargo, double salario, String senha, boolean ativo) {
 		super(nome, cpf, dataNascimento, telefone, email, endereco, dataAdmissao, cargo, salario, senha, ativo);
 	}
-
-	public void gerarRelatorioVendas(Date dia) {
-	    
-	}
 }
